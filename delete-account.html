@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deleting your account — Aura365Life</title>
+<style>
+:root { color-scheme: light dark; --fg:#111; --muted:#555; --bg:#fff; --line:#e3e3e3; --accent:#4338ca; }
+@media (prefers-color-scheme: dark) {
+  :root { --fg:#e8e8ea; --muted:#a1a1aa; --bg:#0b0b0d; --line:#26262b; --accent:#a5b4fc; }
+}
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--fg);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+h1 { font-size: 1.9rem; line-height:1.25; margin: 0 0 .5rem; letter-spacing:-.02em; }
+h2 { font-size: 1.25rem; margin: 2.25rem 0 .5rem; letter-spacing:-.01em; }
+h3 { font-size: 1.05rem; margin: 1.5rem 0 .4rem; }
+p, li { color: var(--fg); }
+a { color: var(--accent); }
+code { background: rgba(127,127,127,.16); padding: .1em .35em; border-radius: 4px; font-size: .9em; }
+hr { border:0; border-top:1px solid var(--line); margin:2rem 0; }
+blockquote { margin:1rem 0; padding:.6rem 1rem; border-left:3px solid var(--line); color:var(--muted); }
+table { border-collapse: collapse; width:100%; margin:1rem 0; display:block; overflow-x:auto; }
+th, td { border:1px solid var(--line); padding:.5rem .6rem; text-align:left; font-size:.94rem; vertical-align:top; }
+nav { border-bottom:1px solid var(--line); padding:.9rem 1.25rem; }
+nav a { margin-right:1.1rem; text-decoration:none; font-size:.94rem; }
+footer { margin-top:3rem; padding-top:1.25rem; border-top:1px solid var(--line); color:var(--muted); font-size:.86rem; }
+</style>
+</head>
+<body>
+<nav>
+  <a href="./index.html">Aura365Life</a>
+  <a href="./privacy.html">Privacy</a>
+  <a href="./terms.html">Terms</a>
+  <a href="./delete-account.html">Delete your account</a>
+</nav>
+<main>
+<h1>Account deletion — the public page Play requires</h1>
+<p><strong>Status: copy drafted, page NOT hosted. The URL is a Play requirement and a submission blocker.</strong></p>
+<p>Play requires a <strong>web-accessible</strong> page describing how to delete an account and what is deleted —</p>
+<p>in addition to the in-app route. The web page is the load-bearing one: it must work for someone</p>
+<p>who has <strong>already uninstalled the app</strong>, which is exactly when most people go looking. A page that</p>
+<p>only says "open the app and tap Delete" fails that test and fails the requirement.</p>
+<p>The content below is derived from what <code>functions/src/deleteAccount.ts</code> actually does, not from a</p>
+<p>generic template. If that function changes, this page changes with it.</p>
+<hr>
+<h2>Page copy</h2>
+<p>```</p>
+<p>DELETING YOUR AURA365LIFE ACCOUNT</p>
+<p>You can delete your account at any time. Deletion is permanent and cannot be undone.</p>
+<p>FROM INSIDE THE APP</p>
+<p>1. Open Aura365Life and go to the "Me" tab.</p>
+<p>2. Choose "Delete account".</p>
+<p>3. Confirm.</p>
+<p>Your account and data are deleted immediately. You do not need to contact us, and we will not</p>
+<p>ask you why.</p>
+<p>IF YOU HAVE ALREADY UNINSTALLED THE APP</p>
+<p>You do not need to reinstall it. Email tnjfleming@gmail.com from the address you signed up with and</p>
+<p>ask for your account to be deleted. We will confirm once it is done.</p>
+<p>WHAT IS DELETED</p>
+<p>Everything that identifies you or describes where you have been:</p>
+<ul>
+<li>Your profile: name, email, date of birth, avatar and your Aura.</li>
+<li>Your location history.</li>
+<li>Your live position in every circle.</li>
+<li>Your presence in every group.</li>
+<li>Your membership of every circle and group, and your rank in any clan.</li>
+<li>Pings you have sent.</li>
+<li>Endorsements you have given to other people, and endorsements other people have given you.</li>
+<li>Your sign-in credentials.</li>
+</ul>
+<p>If deleting your account leaves a circle with nobody in it, that circle is deleted too.</p>
+<p>WHAT IS NOT DELETED</p>
+<p>Public groups (clans) are not deleted when you leave them, even if you created the group and</p>
+<p>even if you were its last member. A clan's history and points describe the group rather than any</p>
+<p>one person, and other people may join it later. Nothing in a group identifies you once your</p>
+<p>membership and presence are removed.</p>
+<p>Aggregate map data — the "how busy is this area" information shown for public groups — is not</p>
+<p>personal data and is never linked to you. It only ever exists where at least five people are</p>
+<p>present, and it is recalculated continuously rather than stored as history, so it contains</p>
+<p>nothing to delete.</p>
+<p>HOW LONG IT TAKES</p>
+<p>Deletion from the app happens immediately.</p>
+<p>Location history is in any case deleted automatically after 7 days, whether or not you delete</p>
+<p>your account.</p>
+<p>QUESTIONS</p>
+<p>tnjfleming@gmail.com</p>
+<p>```</p>
+<hr>
+<h2>Placeholders to fill before publishing</h2>
+<table><thead><tr><th>Item</th><th>Status</th></tr></thead><tbody>
+<tr><td>Contact address</td><td><code>tnjfleming@gmail.com</code> — filled 2026-08-12</td></tr>
+<tr><td>Backup retention sentence</td><td><strong>REMOVED, deliberately.</strong> It read "backups may retain data for up to X" — standard-sounding boilerplate that would have been a <strong>false statement about our own retention</strong>, because no Firestore backup schedule exists at all (GO_LIVE.md §7). Do not reinstate it as a formality. If backups are configured later, state the real period; until then the page correctly says only that deletion is immediate.</td></tr>
+</tbody></table>
+<blockquote>The backup sentence is the one to watch. It is standard-sounding boilerplate, and right now it</blockquote>
+<blockquote>would be a <strong>false statement about our own retention</strong>, because no backup schedule exists at</blockquote>
+<blockquote>all. Either configure backups and state the real period, or delete the sentence. Do not publish</blockquote>
+<blockquote>it on the assumption that it is harmlessly generic — a retention claim in a published deletion</blockquote>
+<blockquote>policy is exactly the kind of statement a regulator checks against reality.</blockquote>
+<h2>Consistency</h2>
+<p>This page, <code>legal/PRIVACY.md</code> and <code>store/DATA_SAFETY.md</code> must agree. The specific claim to keep</p>
+<p>aligned is the 7-day history retention, which appears in all three and in the code as a Firestore</p>
+<p>TTL policy.</p>
+<footer>Aura365Life</footer>
+</main>
+</body>
+</html>
